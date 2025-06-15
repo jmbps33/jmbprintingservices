@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JMB Printing Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2196F3, #4CAF50);
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header img {
+      width: 100px;
+    }
+    table {
+      width: 100%;
+      background: #fff;
+      color: #000;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #000;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    button {
+      padding: 5px 10px;
+      margin: 2px;
+    }
+    #cart {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+    }
+    .note {
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
 
+  <header>
+    <h1>JMB Printing Services</h1>
+    <p>Email: jmbprintingservices12@gmail.com | CP No: 09931109148 | <a href="https://www.facebook.com/JMB-Printing-services" target="_blank">Facebook Page</a></p>
+  </header>
+
+  <h2>Pricing Table</h2>
+  <table id="pricingTable">
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </table>
+
+  <div id="cart">
+    <h3>Cart</h3>
+    <ul id="cartItems"></ul>
+    <p><strong>Total: ₱<span id="total">0</span></strong></p>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="clearCart()">Cancel</button>
+  </div>
+
+  <div class="note">
+    <p><strong>Note:</strong> Send the files/images to: <strong>jmbprintingservices12@gmail.com</strong></p>
+    <p><strong>Important:</strong> For <strong>Book Binding</strong> and <strong>Research</strong>, please come into my shop.</p>
+    <p><strong>Take note:</strong> Before clicking checkout, send first the files/images you want to print or edit, then send the payment.</p>
+    <p><strong>Payment Options:</strong><br>
+      GCASH NUMBER: 09931109148 (Name: Jorenz M. Balbuena)<br>
+      BPI ACCOUNT NAME: Jorenz M. Balbuena<br>
+      BPI ACCOUNT NUMBER: 090931796
+    </p>
+  </div>
+
+  
+
+  <h2>Visit Us</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1750003155417!6m8!1m7!1sso9vr2bbaVqt-psMaEt4sw!2m2!1d13.86006831807936!2d120.6353360692455!3f295.25!4f-9.790000000000006!5f3.325193203789971" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <footer>
+    &copy; <span id="year"></span> JMB Printing Services. All rights reserved.
+  </footer>
+
+  <script>
+    const items = [
+      ['ID RUSH 1', 40],
+      ['ID RUSH 2', 50],
+      ['ID RUSH 3', 55],
+      ['ID RUSH 4', 55],
+      ['ID RUSH 5', 65],
+      ['ID RUSH 6', 65],
+      ['ID RUSH 7', 65],
+      ['ID RUSH 8', 65],
+      ['PHOTO PRINT 1', 70],
+      ['PHOTO PRINT 2', 70],
+      ['PHOTO PRINT 3', 75],
+      ['PHOTO PRINT 4', 85],
+      ['PHOTO PRINT 5', 85],
+      ['PHOTO PRINT 6', 85],
+      ['PHOTO PRINT 7', 90],
+      ['PHOTO PRINT 8', 60],
+      ['PHOTO PRINT 9', 90],
+      ['A4(COLORED)', 6],
+      ['A4(B&W)', 5],
+      ['SHORT(COLORED)', 7],
+      ['SHORT(B&W)', 7],
+      ['LONG(COLORED)', 6],
+      ['LONG(B&W)', 5],
+      ['LAMINATE', 35],
+      ['STICKER', 200],
+      ['RESEARCH', 100],
+      ['BookBINDING', 300]
+    ];
+
+    const table = document.getElementById('pricingTable');
+    items.forEach(([name, price], index) => {
+      const row = table.insertRow();
+      row.insertCell().innerText = name;
+      row.insertCell().innerText = price;
+      const qtyCell = row.insertCell();
+      const qtyInput = document.createElement('input');
+      qtyInput.type = 'number';
+      qtyInput.value = 1;
+      qtyInput.min = 1;
+      qtyCell.appendChild(qtyInput);
+      const btnCell = row.insertCell();
+      const btn = document.createElement('button');
+      btn.innerText = 'Add to Cart';
+      btn.onclick = () => addToCart(name, price, parseInt(qtyInput.value));
+      btnCell.appendChild(btn);
+    });
+
+    const cartItems = [];
+    function addToCart(name, price, qty) {
+      cartItems.push({name, price, qty});
+      renderCart();
+    }
+
+    function renderCart() {
+      const ul = document.getElementById('cartItems');
+      ul.innerHTML = '';
+      let total = 0;
+      cartItems.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = `${item.name} x ${item.qty} = ₱${item.price * item.qty}`;
+        ul.appendChild(li);
+        total += item.price * item.qty;
+      });
+      document.getElementById('total').innerText = total;
+    }
+
+    function clearCart() {
+      cartItems.length = 0;
+      renderCart();
+    }
+
+    function checkout() {
+      if (cartItems.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      const receiptNumber = 'JMB-' + Date.now().toString().slice(-6);
+      let orderDetails = `Receipt No: ${receiptNumber}\n\n`;
+      cartItems.forEach(item => {
+        orderDetails += `${item.name} x ${item.qty} = ₱${item.price * item.qty}\n`;
+      });
+      orderDetails += `\nTotal: ₱${document.getElementById('total').innerText}`;
+      orderDetails += `\n\nPlease confirm your payment and send files/images to: jmbprintingservices12@gmail.com`;
+
+      alert(orderDetails);
+      window.location.href = `mailto:jmbprintingservices12@gmail.com?subject=Order Receipt ${receiptNumber}&body=${encodeURIComponent(orderDetails)}`;
+    }
+
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
