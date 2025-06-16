@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JMB PRINTING SERVICES</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: url('4949813.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 80px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+    }
+    header p {
+      margin: 5px 0;
+    }
+    main {
+      background: rgba(0, 0, 0, 0.6);
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 1000px;
+      border-radius: 10px;
+    }
+    table {
+      width: 100%;
+      background: #fff;
+      color: #000;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    button {
+      padding: 5px 10px;
+      background: #007BFF;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button.cancel {
+      background: #dc3545;
+    }
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+    }
+    iframe {
+      width: 100%;
+      border: 0;
+    }
+    .checkout {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <img src="JMB22.jpg" alt="JMB Logo">
+  <h1>JMB PRINTING SERVICES</h1>
+  <p>HIGH QUALITY PRINT</p>
+  <p>Email: jmbprintingservices12@gmail.com | CP No.: 09931109148 | Facebook: JMB Printing Services</p>
+  <p>Location: Hi-way, Barangay, Balitoc, Calatagan, Batangas</p>
+</header>
+
+<main>
+  <h2>Pricing Table</h2>
+  <table id="pricingTable">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="items">
+      <!-- Items will be inserted by JavaScript -->
+    </tbody>
+  </table>
+  <h3>Total: ₱<span id="total">0</span></h3>
+  <button onclick="cancelOrder()" class="cancel">Cancel Order</button>
+
+  <div class="checkout">
+    <h2>Checkout</h2>
+    <p><strong>Important:</strong> Send the files/images to <b>jmbprintingservices12@gmail.com</b> before clicking checkout. Also, send your payment and receipt screenshot.</p>
+    <p>Payment Details:</p>
+    <ul>
+      <li>GCASH: 09931109148 (Jorenz M. Balbuena)</li>
+      <li>BPI: 090931796 (Jorenz M. Balbuena)</li>
+    </ul>
+    <label>Full Name: <input id="fullname" required></label><br>
+    <label>Full Address: <input id="address" required></label><br>
+    <label>Cellphone Number: <input id="cellphone" required></label><br>
+    <label>Courier:
+      <select id="courier">
+        <option value="J&T">J&T</option>
+        <option value="LBC">LBC</option>
+        <option value="JRS">JRS</option>
+      </select>
+    </label><br>
+    <button onclick="checkout()">Checkout & Email Order</button>
+  </div>
+
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/200" alt="Sample 1">
+    <img src="https://via.placeholder.com/200" alt="Sample 2">
+    <img src="https://via.placeholder.com/200" alt="Sample 3">
+  </div>
+
+  <h2>Our Location</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!4v1750055108999!6m8!1m7!1sfjqgplr9mUZHqasYrFi4Vg!2m2!1d13.86016015653617!2d120.6353475673359!3f249.05!4f-9.870000000000005!5f3.325193203789971" height="450" allowfullscreen loading="lazy"></iframe>
+
+  <h2>Our Jingle</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cCxIFT3Y-6Y?si=F_UtN62Ndtt2IVWt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+JMB Printing Services (Tagalog Jingle)
+(Verse 1)
+Sa bawat okasyon, kami’y handa,
+Mga print mo, siguradong maganda.
+Tarpaulin, sticker, ID, calling card,
+Lahat ng order, quality ang standard!
+
+(Chorus)
+JMB Printing, sa'yo'y aalalay,
+Serbisyong maaasahan, abot-kaya'y tunay!
+Lahat ng kailangan mo, dito'y makikita,
+JMB Printing, ang galing ay wala nang kapantay!
+
+(Verse 2)
+Kung kailangan mo ng rush, wag kang mag-alala,
+Express service, para sa’yo, agad-agad gawa!
+Design pa lang, panalo na sa ganda,
+Sa JMB Printing, laging may diskarte't sigla.
+
+(Bridge)
+Gamit ay de-kalidad, staff ay maaasahan,
+Para sa negosyo mo, ito’y kasangga’t kaibigan.
+
+(Chorus Repeat)
+JMB Printing, sa'yo'y aalalay,
+Serbisyong maaasahan, abot-kaya'y tunay!
+Lahat ng kailangan mo, dito'y makikita,
+JMB Printing, ang galing ay wala nang kapantay!
+
+(Outro)
+JMB Printing Services —
+Laging nandyan, laging maaasahan!
+  </pre>
+
+  <p><strong>Note:</strong> Send your files/images to our email. For Book Binding and Research, please visit our shop personally.</p>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> JMB PRINTING SERVICES. All rights reserved.
+</footer>
+
+<script>
+  const items = [
+    ["ID RUSH 1", 40], ["ID RUSH 2", 50], ["ID RUSH 3", 55], ["ID RUSH 4", 55],
+    ["ID RUSH 5", 65], ["ID RUSH 6", 65], ["ID RUSH 7", 65], ["ID RUSH 8", 65],
+    ["PHOTO PRINT 1", 70], ["PHOTO PRINT 2", 70], ["PHOTO PRINT 3", 75], ["PHOTO PRINT 4", 85],
+    ["PHOTO PRINT 5", 85], ["PHOTO PRINT 6", 85], ["PHOTO PRINT 7", 90], ["PHOTO PRINT 8", 60],
+    ["PHOTO PRINT 9", 90], ["A4(COLORED)", 6], ["A4(B&W)", 5], ["SHORT(COLORED)", 7],
+    ["SHORT(B&W)", 7], ["LONG(COLORED)", 6], ["LONG(B&W)", 5], ["LAMINATE", 35],
+    ["STICKER", 200], ["RESEARCH", 100], ["BookBINDING", 30],
+    ["TARPAULIN #1", 300], ["TARPAULIN #2", 400], ["TARPAULIN #3", 500]
+  ];
+  const cart = [];
+  const itemsTbody = document.getElementById('items');
+
+  items.forEach(([name, price], index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `<td>${name}</td><td>${price}</td>
+    <td><input type="number" min="1" value="1" id="qty${index}" style="width:50px;"></td>
+    <td><button onclick="addToCart('${name}', ${price}, ${index})">Add to Cart</button></td>`;
+    itemsTbody.appendChild(row);
+  });
+
+  function addToCart(name, price, index) {
+    const qty = parseInt(document.getElementById(`qty${index}`).value);
+    cart.push({ name, price, qty });
+    updateTotal();
+  }
+
+  function updateTotal() {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    document.getElementById('total').textContent = total;
+  }
+
+  function cancelOrder() {
+    cart.length = 0;
+    updateTotal();
+    alert('Order cancelled.');
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert('Your cart is empty.');
+      return;
+    }
+    const receipt = 'JMB-' + Date.now();
+    const fullname = document.getElementById('fullname').value;
+    const address = document.getElementById('address').value;
+    const cellphone = document.getElementById('cellphone').value;
+    const courier = document.getElementById('courier').value;
+
+    let order = `Receipt No: ${receipt}\n\nOrder Details:\n`;
+    cart.forEach(item => {
+      order += `${item.qty} x ${item.name} @ ₱${item.price} = ₱${item.price * item.qty}\n`;
+    });
+    order += `\nTotal: ₱${cart.reduce((sum, item) => sum + (item.price * item.qty), 0)}\n`;
+    order += `\nDelivery Info:\nName: ${fullname}\nAddress: ${address}\nCellphone: ${cellphone}\nCourier: ${courier}`;
+
+    alert(order);
+    window.location = `mailto:jmbprintingservices12@gmail.com?subject=Order ${receipt}&body=${encodeURIComponent(order)}`;
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
